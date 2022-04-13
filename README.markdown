@@ -7,7 +7,15 @@ Following FreeCodeCamp's CSS Tutorial - Zero to Hero (Complete Course) on youtub
 
 ## Usage
 
-`(ql:quickload :css-tut)`
+* Load the system
+```(progn 
+	  (ql:quickload :css-tut)
+	  (use-package :css-tut))```
+
+* Start the webserver
+`(css-tut:start :port <80>)`
+
+`:PORT` is optional and defaults to 80
 
 ## Installation
 
