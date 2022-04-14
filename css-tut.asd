@@ -1,5 +1,5 @@
 (defsystem "css-tut"
-  :version "0.1.0"
+  :version "0.2.0"
   :author ""
   :license ""
   :depends-on ("aserve"
@@ -7,7 +7,11 @@
 	       "webactions")
   :components ((:module "src"
                 :components
-                ((:file "main"))))
+                ((:file "styles")
+		 (:file "view-controller"
+		  :depends-on ("styles"))
+		 (:file "main"
+		  :depends-on ("view-controller")))))
   :description ""
   :in-order-to ((test-op (test-op "css-tut/tests"))))
 
