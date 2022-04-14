@@ -65,6 +65,10 @@
 ;; HTML file used for styling
 (publish-file :path "/zero-to-hero" :file "index.html")
 
+;; Images used in web page
+(publish-file :path "/img-1.png" :file "img/img-1.png")
+(publish-file :path "/img-2.png" :file "img/img-2.png")
+
 ;; Path to the CSS file
 (publish :path "/style.css" :content-type "text/css; charset=utf-8"
 	 :function
