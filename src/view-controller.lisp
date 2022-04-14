@@ -58,3 +58,10 @@
 			       ((:a href "https://youtu.be/1Rs2ND1ryYc") "CSS Tutorial - Zero to Hero (Complete Course)"))
 			   (:p "Lessons below:")
 			   (:ul (:li ((:a href "/lesson1") "Lesson 1"))))))))))
+
+(publish :path "/lesson1" :content-type "text/html"
+	 :function
+	 #'(lambda (r e)
+	     (with-http-response (r e)
+	       (with-body-response (r e)
+		 (princ "Lesson 1" *html-stream*)))))
