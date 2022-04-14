@@ -8,7 +8,9 @@
 (defun stylesheet ()
   "Cascading Style Sheet"
   (lass:compile-and-write
-   '(body
-     :margin 0
-     :padding 0
-     :border 0)))
+   '(.title
+     :color red)
+   '(.subtitle
+     :color blue)
+   '("#contact-us"
+     :color green)))
