@@ -40,28 +40,35 @@
   (:documentation "The VC in MVC")
   (:use :cl :net.aserve
 	:acl-compat.excl
-   :net.html.generator))
+   :net.html.generator)
+  (:import-from :styles
+		   :stylesheet))
 
 (in-package :view-controller)
 
+;; Landing page
 (publish :path "/"
 	 :content-type "text/html"
 	 :function
 	 #'(lambda (req ent)
-		  (with-http-response (req ent)
-		    (with-http-body (req ent)
-		      (html
-			(:html (:head (:title "CSS3 Tutorial"))
-			  (:body
-			   (:h1 "CSS3 Tutorial")
-			   (:p "Learning from FreeCodeCamp's YT video "
-			       ((:a href "https://youtu.be/1Rs2ND1ryYc") "CSS Tutorial - Zero to Hero (Complete Course)"))
-			   (:p "Lessons below:")
-			   (:ul (:li ((:a href "/lesson1") "Lesson 1"))))))))))
+	     (with-http-response (req ent)
+	       (with-http-body (req ent)
+		 (html
+		   (:html (:head (:title "CSS3 Tutorial"))
+		     (:body
+		      (:h1 "CSS3 Tutorial")
+		      (:p "Learning from FreeCodeCamp's YT video "
+			  ((:a href "https://youtu.be/1Rs2ND1ryYc") "CSS Tutorial - Zero to Hero (Complete Course)"))
+		      (:p ((:a href "/zero-to-hero") "View")
+			  " the outcome of the lessons."))))))))
 
-(publish :path "/lesson1" :content-type "text/html"
+;; HTML file used for styling
+(publish-file :path "/zero-to-hero" :file "index.html")
+
+;; Path to the CSS file
+(publish :path "/style.css" :content-type "text/css; charset=utf-8"
 	 :function
 	 #'(lambda (r e)
-	     (with-http-response (r e)
-	       (with-body-response (r e)
-		 (princ "Lesson 1" *html-stream*)))))
+	     (with-http-response (r e :format :text)
+	       (with-http-body (r e)
+		 (princ (funcall #'stylesheet) *html-stream*)))))
