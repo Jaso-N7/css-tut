@@ -8,22 +8,17 @@
 
 (defun stylesheet ()
   "Cascading Style Sheet"
-  (lass:compile-and-write
-   '((:and h2 :hover)
-     :color red)
-   '(.subtitle
-     :color blue)
-   '("#services"
-     :color green)
-   '((h2 + a)
-     :color "#DF740C")
-   '((textarea ~ button) :color purple)
-   '((ul > li) :color blue)
-   '((ul li) :color green)
-   '((:and img (:^= src "/img"))
-     :border 10px solid black)
-   '((:and h2 (:~= class "about-subtitle"))
-     :background green)))
+  (let ((orange "rgb(223,116,12)")
+	(sweet-yellow "rgb(255,230,77)")
+	(pane "rgb(230,255,255)")
+	(cyan "rgb(111,195,223)")
+	(basestar "rgb(12,20,31)"))
+     
+    (lass:compile-and-write
+     `("#title"
+       :color ,orange)
+     `(.subtitle
+       :color ,sweet-yellow))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
@@ -33,6 +28,7 @@ https://www.colourlovers.com/palette/1406402/Tron_Legacy_2"
      :background-color "#0C141F"
      :color "#E6FFFF"
      :font-family "Helvetica, Arial, sans-serif")
+   '(h1 :color "#FFE64D")
    '((:and "#yt-link" :link)
      :color "#DF740C")
    '((:and "#yt-link" :visited)
