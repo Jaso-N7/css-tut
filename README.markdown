@@ -8,12 +8,14 @@ Following FreeCodeCamp's CSS Tutorial - Zero to Hero (Complete Course) on youtub
 ## Usage
 
 * Load the system
-```(progn 
+```
+(progn 
 	  (ql:quickload :css-tut)
-	  (use-package :css-tut))```
+	  (use-package :css-tut))
+```
 
 * Start the webserver
-`(css-tut:start :port <80>)`
+`(css-tut:httpd-up :port <80>)`
 
 `:PORT` is optional and defaults to 80
 
