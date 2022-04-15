@@ -25,11 +25,9 @@
        :color ,sweet-yellow)
      '("#service-image"
        :height 400px
-       :width 70%
+       :width 70vw
        ;; :linear-gradient "to bottom right" (rgb 94 255 126) 0% (rgba 94 255 126 0) 100%
-       :radial-gradient circle farthest-side center red 20% blue 40% green 60%
-       
-       ))))
+       :radial-gradient circle farthest-side center red 20% blue 40% green 60%))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
