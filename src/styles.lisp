@@ -12,7 +12,7 @@
 	(sweet-yellow "rgb(255,230,77)")
 	(pane "rgb(230,255,255)")
 	(cyan "rgb(111,195,223)")
-	(basestar "rgb(12,20,31)"))
+	(basestar "rgba(12,20,31, .4)"))
      
     (lass:compile-and-write
      `(body
@@ -27,7 +27,7 @@
        :width 70%
        :background-image (url "/img-2.png")
        :background-size cover
-       :background-color (rgb 12 20 31)))))
+       :background-color (rgba 12 20 31 .4)))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
