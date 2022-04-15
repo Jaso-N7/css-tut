@@ -15,6 +15,8 @@
 	(basestar "rgb(12,20,31)"))
      
     (lass:compile-and-write
+     `(body
+       :background ,basestar)
      `("#title"
        :color ,orange)
      `(.subtitle
