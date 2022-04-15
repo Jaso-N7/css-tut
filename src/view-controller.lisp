@@ -42,7 +42,8 @@
 	:acl-compat.excl
    :net.html.generator)
   (:import-from :styles
-		   :stylesheet))
+		#:stylesheet
+		#:homestyle))
 
 (in-package :view-controller)
 
@@ -54,12 +55,16 @@
 	     (with-http-response (req ent)
 	       (with-http-body (req ent)
 		 (html
-		   (:html (:head (:title "CSS3 Tutorial"))
+		   (:html (:head (:title "CSS3 Tutorial")
+				 ((:link rel "stylesheet"
+					 type "text/css"
+					 href "/home.css")))
 		     (:body
 		      (:h1 "CSS3 Tutorial")
 		      (:p "Learning from FreeCodeCamp's YT video "
-			  ((:a href "https://youtu.be/1Rs2ND1ryYc") "CSS Tutorial - Zero to Hero (Complete Course)"))
-		      (:p ((:a href "/zero-to-hero") "View")
+			  ((:a id "yt-link"
+			       href "https://youtu.be/1Rs2ND1ryYc") "CSS Tutorial - Zero to Hero (Complete Course)"))
+		      (:p ((:a id "tut-link" href "/zero-to-hero") "View")
 			  " the outcome of the lessons."))))))))
 
 ;; HTML file used for styling
@@ -76,3 +81,10 @@
 	     (with-http-response (r e :format :text)
 	       (with-http-body (r e)
 		 (princ (funcall #'stylesheet) *html-stream*)))))
+
+(publish :path "/home.css" :content-type "text/css; charset=utf-8"
+	 :function
+	 #'(lambda (r e)
+	     (with-http-response (r e :format :text)
+	       (with-http-body (r e)
+		 (princ (funcall #'homestyle) *html-stream*)))))
