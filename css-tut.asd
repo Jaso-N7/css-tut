@@ -7,7 +7,8 @@
 	       "webactions")
   :components ((:module "src"
                 :components
-                ((:file "styles")
+                ((:file "html5-patch")
+		 (:file "styles")
 		 (:file "view-controller"
 		  :depends-on ("styles"))
 		 (:file "main"
