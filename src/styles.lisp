@@ -17,11 +17,17 @@
     (lass:compile-and-write
      `(body
        :background-color ,basestar
-       :background-image (url "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fother-landscapes%2Fautumn-landscape-with-fog-scenery.jpg&f=1&nofb=1"))
+       :color ,cyan)
      `("#title"
        :color ,orange)
      `(.subtitle
-       :color ,sweet-yellow))))
+       :color ,sweet-yellow)
+     '("#service-image"
+       :height 400px
+       :width 70%
+       :background-image (url "/img-2.png")
+       :background-size cover
+       :background-color (rgb 12 20 31)))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
