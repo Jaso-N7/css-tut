@@ -14,7 +14,12 @@
    '(.subtitle
      :color blue)
    '("#services"
-     :color green)))
+     :color green)
+   '((h2 + a)
+     :color "#DF740C")
+   '((textarea ~ button) :color purple)
+   '((ul > li) :color blue)
+   '((ul li) :color green)))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
