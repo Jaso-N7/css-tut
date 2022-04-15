@@ -40,8 +40,20 @@
 				   :type "html"))
 
 ;; Images used in web page
-(publish-file :path "/img-1.png" :file "img/img-1.png")
-(publish-file :path "/img-2.png" :file "img/img-2.png")
+(publish-file :path "/img-1.png"
+	      :file
+	      (make-pathname :directory
+			     (append (pathname-directory view-controller::*current-dir*)
+				'("img"))
+			     :name "img-1"
+			     :type "png"))
+(publish-file :path "/img-2.png"
+	      :file
+	      (make-pathname :directory
+			     (append (pathname-directory view-controller::*current-dir*)
+				'("img"))
+			     :name "img-2"
+			     :type "png"))
 
 ;; Path to the CSS file
 (publish :path "/style.css" :content-type "text/css; charset=utf-8"
