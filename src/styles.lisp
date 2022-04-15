@@ -21,7 +21,8 @@
        :color ,cyan
        :text-align justify
        :font-size 1.15em
-       :font-weight 300)
+       :font-weight 300
+       :font-family "Arial" sans-serif)
      '((:or "#title" .subtitle)
        :text-transform uppercase
        :text-align center)
