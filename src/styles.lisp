@@ -9,7 +9,7 @@
 (defun stylesheet ()
   "Cascading Style Sheet"
   (lass:compile-and-write
-   '(h2
+   '((:and h2 :hover)
      :color red)
    '(.subtitle
      :color blue)
