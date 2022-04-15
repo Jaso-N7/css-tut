@@ -19,15 +19,19 @@
        :background-color ,basestar
        :linear-gradient "to bottom" ,basestar 0% (rgba 12 20 31 .4) 100%
        :color ,cyan
-       :text-align justify)
+       :text-align justify
+       :font-size 1.15em
+       :font-weight 300)
      '((:or "#title" .subtitle)
        :text-transform uppercase
        :text-align center)
      `("#title"
-       :color ,orange)
+       :color ,orange
+       :font-weight 600)
      `(.subtitle
        :color ,sweet-yellow
-       :text-decoration underline)
+       :text-decoration underline
+       :font-weight 400)
      '("#service-image"
        :height 400px
        :width 70vw
@@ -35,7 +39,9 @@
        :radial-gradient circle farthest-side center red 20% blue 40% green 60%)
      `(.link
        :text-decoration none
-       :color ,pane))))
+       :color ,pane)
+     '(.italics
+       :font-style oblique))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
