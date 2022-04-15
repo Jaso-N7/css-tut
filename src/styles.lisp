@@ -12,11 +12,12 @@
 	(sweet-yellow "rgb(255,230,77)")
 	(pane "rgb(230,255,255)")
 	(cyan "rgb(111,195,223)")
-	(basestar "rgba(12,20,31, .4)"))
+	(basestar "rgb(12,20,31)"))
      
     (lass:compile-and-write
      `(body
        :background-color ,basestar
+       :linear-gradient "to bottom" ,basestar 0% (rgba 12 20 31 .4) 100%
        :color ,cyan)
      `("#title"
        :color ,orange)
@@ -25,9 +26,10 @@
      '("#service-image"
        :height 400px
        :width 70%
-       :background-image (url "/img-2.png")
-       :background-size cover
-       :background-color (rgba 12 20 31 .4)))))
+       ;; :linear-gradient "to bottom right" (rgb 94 255 126) 0% (rgba 94 255 126 0) 100%
+       :radial-gradient circle farthest-side center red 20% blue 40% green 60%
+       
+       ))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
