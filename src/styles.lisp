@@ -18,16 +18,24 @@
      `(body
        :background-color ,basestar
        :linear-gradient "to bottom" ,basestar 0% (rgba 12 20 31 .4) 100%
-       :color ,cyan)
+       :color ,cyan
+       :text-align justify)
+     '((:or "#title" .subtitle)
+       :text-transform uppercase
+       :text-align center)
      `("#title"
        :color ,orange)
      `(.subtitle
-       :color ,sweet-yellow)
+       :color ,sweet-yellow
+       :text-decoration underline)
      '("#service-image"
        :height 400px
        :width 70vw
        ;; :linear-gradient "to bottom right" (rgb 94 255 126) 0% (rgba 94 255 126 0) 100%
-       :radial-gradient circle farthest-side center red 20% blue 40% green 60%))))
+       :radial-gradient circle farthest-side center red 20% blue 40% green 60%)
+     `(.link
+       :text-decoration none
+       :color ,pane))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
@@ -37,7 +45,11 @@ https://www.colourlovers.com/palette/1406402/Tron_Legacy_2"
      :background-color "#0C141F"
      :color "#E6FFFF"
      :font-family "Helvetica, Arial, sans-serif")
-   '(h1 :color "#FFE64D")
+   '(h1
+     :color "#FFE64D"
+     :text-transform uppercase)
+   '((:or "#yt-link" "#tut-link")
+     :text-decoration none)
    '((:and "#yt-link" :link)
      :color "#DF740C")
    '((:and "#yt-link" :visited)
