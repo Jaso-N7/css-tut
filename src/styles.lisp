@@ -19,7 +19,11 @@
      :color "#DF740C")
    '((textarea ~ button) :color purple)
    '((ul > li) :color blue)
-   '((ul li) :color green)))
+   '((ul li) :color green)
+   '((:and img (:^= src "/img"))
+     :border 10px solid black)
+   '((:and h2 (:~= class "about-subtitle"))
+     :background green)))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
