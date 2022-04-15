@@ -16,7 +16,8 @@
      
     (lass:compile-and-write
      `(body
-       :background ,basestar)
+       :background-color ,basestar
+       :background-image (url "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fother-landscapes%2Fautumn-landscape-with-fog-scenery.jpg&f=1&nofb=1"))
      `("#title"
        :color ,orange)
      `(.subtitle
