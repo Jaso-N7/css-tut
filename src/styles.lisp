@@ -39,9 +39,11 @@
        :font-size 2.441rem
        :text-decoration underline)
      `("#service-image"
+       :display none
        :height 400px
        :width 70vw
        :border 4px dashed ,pane
+       :float right
        ;; :linear-gradient "to bottom right" (rgb 94 255 126) 0% (rgba 94 255 126 0) 100%
        :radial-gradient circle farthest-side center red 20% blue 40% green 60%)
      `(.link
@@ -55,7 +57,9 @@
        :width 60%
        :border 6px solid ,pane
        :margin 10px 50px
-       :padding 80px))))
+       :float left)
+     '(.site-table
+       :display inline-block))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
