@@ -15,6 +15,7 @@
 	(basestar "rgb(12,20,31)"))
      
     (lass:compile-and-write
+     '(html :font-size 100%) 		; 16px?
      `(body
        :background-color ,basestar
        :linear-gradient "to bottom" ,basestar 0% (rgba 12 20 31 .4) 100%
@@ -28,11 +29,13 @@
        :text-align center)
      `("#title"
        :color ,orange
-       :font-weight 600)
+       :font-weight 600
+       :font-size 3.052rem)
      `(.subtitle
        :color ,sweet-yellow
        :text-decoration underline
-       :font-weight 400)
+       :font-weight 400
+       :font-size 2.441rem)
      '("#service-image"
        :height 400px
        :width 70vw
