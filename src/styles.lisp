@@ -17,43 +17,45 @@
     (lass:compile-and-write
      '(html :font-size 100%)		; 16px?
      `(body
-       :background-color ,basestar
-       :linear-gradient "to bottom" ,basestar 0% (rgba 12 20 31 0.4) 100%
        :color ,cyan
        :text-align justify
        :font-size 1.15e m
        :font-weight 300
-       :font-family "Quicksand" sans-serif)
-     '((:or "#title" \.subtitle)
+       :font-family "Quicksand" sans-serif
+       :background-color ,basestar
+       :linear-gradient "to bottom" ,basestar 0% (rgba 12 20 31 0.4) 100%)
+     '((:or "#title" .subtitle)
        :font-family "Work Sans" sans-serif
        ;; :text-transform uppercase
        :text-align center)
      `("#title"
-       :text-transform uppercase
        :color ,orange
        :font-weight 600
-       :font-size 3.052rem)
-     `(\.subtitle
+       :font-size 3.052rem
+       :text-transform uppercase)
+     `(.subtitle
        :color ,sweet-yellow
-       :text-decoration underline
        :font-weight 400
-       :font-size 2.441rem)
+       :font-size 2.441rem
+       :text-decoration underline)
      `("#service-image"
        :height 400px
        :width 70vw
+       :border 4px dashed ,pane
        ;; :linear-gradient "to bottom right" (rgb 94 255 126) 0% (rgba 94 255 126 0) 100%
-       :radial-gradient circle farthest-side center red 20% blue 40% green 60%
-       ;; styles are solid, dotted, dashed, double
-       :border 4px solid ,pane)
-     `(\.link
-       :text-decoration none
-       :color ,pane)
-     '(\.italics
+       :radial-gradient circle farthest-side center red 20% blue 40% green 60%)
+     `(.link
+       :color ,pane
+       :text-decoration none)
+     '(.italics
        :font-style oblique)
      ;; Content size are affected by height and width
-     '("#about-us-image"
+     `("#about-us-image"
        :height 300px
-       :width 60%))))
+       :width 60%
+       :border 6px solid ,pane
+       :margin 10px 50px
+       :padding 80px))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
