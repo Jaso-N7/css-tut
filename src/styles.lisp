@@ -23,11 +23,13 @@
        :text-align justify
        :font-size 1.15em
        :font-weight 300
-       :font-family "Arial" sans-serif)
+       :font-family "Quicksand" sans-serif)
      '((:or "#title" .subtitle)
-       :text-transform uppercase
+       :font-family "Work Sans" sans-serif
+       ;; :text-transform uppercase
        :text-align center)
      `("#title"
+       :text-transform uppercase
        :color ,orange
        :font-weight 600
        :font-size 3.052rem)
