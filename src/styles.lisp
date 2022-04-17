@@ -15,16 +15,16 @@
 	(basestar "rgb(12,20,31)"))
      
     (lass:compile-and-write
-     '(html :font-size 100%) 		; 16px?
+     '(html :font-size 100%)		; 16px?
      `(body
        :background-color ,basestar
-       :linear-gradient "to bottom" ,basestar 0% (rgba 12 20 31 .4) 100%
+       :linear-gradient "to bottom" ,basestar 0% (rgba 12 20 31 0.4) 100%
        :color ,cyan
        :text-align justify
-       :font-size 1.15em
+       :font-size 1.15e m
        :font-weight 300
        :font-family "Quicksand" sans-serif)
-     '((:or "#title" .subtitle)
+     '((:or "#title" \.subtitle)
        :font-family "Work Sans" sans-serif
        ;; :text-transform uppercase
        :text-align center)
@@ -33,20 +33,22 @@
        :color ,orange
        :font-weight 600
        :font-size 3.052rem)
-     `(.subtitle
+     `(\.subtitle
        :color ,sweet-yellow
        :text-decoration underline
        :font-weight 400
        :font-size 2.441rem)
-     '("#service-image"
+     `("#service-image"
        :height 400px
        :width 70vw
        ;; :linear-gradient "to bottom right" (rgb 94 255 126) 0% (rgba 94 255 126 0) 100%
-       :radial-gradient circle farthest-side center red 20% blue 40% green 60%)
-     `(.link
+       :radial-gradient circle farthest-side center red 20% blue 40% green 60%
+       ;; styles are solid, dotted, dashed, double
+       :border 4px solid ,pane)
+     `(\.link
        :text-decoration none
        :color ,pane)
-     '(.italics
+     '(\.italics
        :font-style oblique)
      ;; Content size are affected by height and width
      '("#about-us-image"
