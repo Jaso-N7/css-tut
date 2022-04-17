@@ -7,7 +7,7 @@
 (in-package :styles)
 
 (defun stylesheet ()
-  "Cascading Style Sheet"
+  "Cascading Style Sheet."
   (let ((orange "rgb(223,116,12)")
 	(sweet-yellow "rgb(255,230,77)")
 	(pane "rgb(230,255,255)")
@@ -47,7 +47,11 @@
        :text-decoration none
        :color ,pane)
      '(.italics
-       :font-style oblique))))
+       :font-style oblique)
+     ;; Content size are affected by height and width
+     '("#about-us-image"
+       :height 300px
+       :width 60%))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
