@@ -58,14 +58,21 @@
        :float left)
      '(.site-table
        :display inline-block)
-     '(.container
+     '(\.container
        :background-color (rgb 250 250 250)
+       :color white
        :margin 10px
        :display flex
        ;; default: row. Other options are column, column-reverse, row-reverse
-       :flex-direction row-reverse
+       :flex-direction row
        ;; options include wrap, nowrap, wrap-reverse
-       :flex-wrap wrap-reverse)
+       :flex-wrap wrap
+       ;; horizontal alignment options: flex-start, flex-end, center
+       ;; space-between, space-around
+       :justify-content space-between
+       ;; vertical alignment options: same as 'justify-content' plus
+       ;; baseline and stretch
+       :align-items center)
      '(.container-item
        :background (rgb 36 130 39)
        :font-size 25px
