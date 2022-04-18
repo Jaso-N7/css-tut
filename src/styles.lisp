@@ -86,11 +86,7 @@
        :width 90vw
        :margin 10px
        :background-color ,basestar
-       :display grid
-       :grid-template-columns auto auto auto
-       :grid-template-rows auto auto
-       ;; grid-gap: [row-spacing column-spacing]
-       :grid-gap 50px 35%)
+       :display grid)
      `(.grid-item
        :color ,basestar
        :font-size 1.25em
