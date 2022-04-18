@@ -61,7 +61,11 @@
      '(.container
        :background-color (rgb 250 250 250)
        :margin 10px
-       :display flex)
+       :display flex
+       ;; default: row. Other options are column, column-reverse, row-reverse
+       :flex-direction row-reverse
+       ;; options include wrap, nowrap, wrap-reverse
+       :flex-wrap wrap-reverse)
      '(.container-item
        :background (rgb 36 130 39)
        :font-size 25px
