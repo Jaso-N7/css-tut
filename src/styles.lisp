@@ -88,7 +88,9 @@
        :width 70vw
        :margin 10px
        :background-color ,basestar
-       :display grid)
+       :display grid
+       :grid-template-columns 10% 10% 10% 70%
+       :grid-template-rows 60% 40%)
      `(.grid-item
        :color ,basestar
        :font-size 1.25em
