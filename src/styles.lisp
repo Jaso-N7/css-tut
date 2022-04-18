@@ -62,14 +62,15 @@
        :background-color (rgb 250 250 250)
        :color white
        :margin 10px
+       :height 300px
        :display flex
        ;; default: row. Other options are column, column-reverse, row-reverse
        :flex-direction row
        ;; options include wrap, nowrap, wrap-reverse
-       :flex-wrap wrap
+       :flex-wrap nowrap
        ;; horizontal alignment options: flex-start, flex-end, center
        ;; space-between, space-around
-       :justify-content space-between
+       :justify-content center
        ;; vertical alignment options: same as 'justify-content' plus
        ;; baseline and stretch
        :align-items center)
