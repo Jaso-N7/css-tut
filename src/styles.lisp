@@ -65,15 +65,13 @@
        :margin 10px
        :height 300px
        :display flex
-       ;; default: row. Other options are column, column-reverse, row-reverse
+       ;; flex-direction: [ *row | column | column-reverse | row-reverse]
        :flex-direction row
-       ;; options include wrap, nowrap, wrap-reverse
+       ;; flex-wrap: [ *wrap| nowrap | wrap-reverse ]
        :flex-wrap nowrap
-       ;; horizontal alignment options: flex-start, flex-end, center
-       ;; space-between, space-around
+       ;; justify-content: [ *flex-start | flex-end | center | space-between | space-around ]
        :justify-content center
-       ;; vertical alignment options: same as 'justify-content' plus
-       ;; baseline and stretch
+       ;; align-items: [ ... | baseline | stretch ]
        :align-items center)
      '(.container-item
        :background (rgb 36 130 39)
@@ -84,13 +82,17 @@
        :margin 10px)
      ;; GRID
      `(.grid-container
-       :height 300px
-       :width 70vw
+       :height 500px
+       :width 90vw
        :margin 10px
        :background-color ,basestar
        :display grid
-       :grid-template-columns 10% 10% 10% 70%
-       :grid-template-rows 60% 40%)
+       :grid-template-columns auto auto auto
+       :grid-template-rows auto auto
+       ;; justify-content: [start | center | end | space-around | space-evenly]
+       :justify-content space-around
+       ;; align-content: [start | center | end | space-around | space-between]
+       :align-content space-between)
      `(.grid-item
        :color ,basestar
        :font-size 1.25em
