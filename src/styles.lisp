@@ -89,10 +89,8 @@
        :display grid
        :grid-template-columns auto auto auto
        :grid-template-rows auto auto
-       ;; justify-content: [start | center | end | space-around | space-evenly]
-       :justify-content space-around
-       ;; align-content: [start | center | end | space-around | space-between]
-       :align-content space-between)
+       ;; grid-gap: [row-spacing column-spacing]
+       :grid-gap 50px 35%)
      `(.grid-item
        :color ,basestar
        :font-size 1.25em
