@@ -58,6 +58,7 @@
        :float left)
      '(.site-table
        :display inline-block)
+     ;; FLEXBOX
      '(\.container
        :background-color (rgb 250 250 250)
        :color white
@@ -80,7 +81,22 @@
        :text-align center
        :width 70px
        :line-height 50px
-       :margin 10px))))
+       :margin 10px)
+     ;; GRID
+     `(.grid-container
+       :height 300px
+       :width 70vw
+       :margin 10px
+       :background-color ,basestar
+       :display grid)
+     `(.grid-item
+       :color ,basestar
+       :font-size 1.25em
+       :width 70px
+       :line-height 40px
+       :margin 10px
+       :text-align center
+       ))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
