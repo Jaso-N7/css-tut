@@ -90,11 +90,30 @@
      `(.grid-item
        :color ,basestar
        :font-size 1.25em
-       :width 70px
+       :width 90%
        :line-height 40px
        :margin 10px
-       :text-align center
-       ))))
+       :text-align center)
+     '(.grid-item-logo
+       :background salmon
+       ;; grid-area: [grid-row-start / grid-column-start / grid-row-end / grid-column-end ]
+       :grid-area 1 / 1 / 1 / 1)
+     '(.grid-item-header
+       :background tomato
+       :grid-area 1 / 2 / 1 / span 3)
+     '(.grid-item-left
+       :background lemonchiffon
+       :grid-area 2 / 1 / span 2 / 1)
+     '(.grid-item-article
+       :background lime
+       :grid-area 2 / 2 / span 2 / span 2)
+     '(.grid-item-right
+       :background cornflowerblue
+       :grid-area 2 / span 1 / span 2 / 5)
+     '(.grid-item-footer
+       :background plum
+       :grid-column 1 / span 5
+       :grid-row-start 4))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
