@@ -19,11 +19,13 @@
      `(body
        :color ,cyan
        :text-align justify
-       :font-size 1.15e m
+       :font-size 1.15em
        :font-weight 300
        :font-family "Quicksand" sans-serif
-       :background-color ,basestar
        :linear-gradient "to bottom" ,basestar 0% (rgba 12 20 31 0.4) 100%)
+     '((:or input textarea)
+       :display block
+       :margin 10px)
      '((:or "#title" .subtitle)
        :font-family "Work Sans" sans-serif
        ;; :text-transform uppercase
@@ -113,7 +115,19 @@
      '(.grid-item-footer
        :background plum
        :grid-column 1 / span 5
-       :grid-row-start 4))))
+       :grid-row-start 4)
+     `(\.submit-button
+       :margin 20px 20px
+       :padding 10px 15px
+       :border none
+       :font-family "Work Sans" sans-serif
+       :color ,basestar
+       :background ,cyan
+       ;; transition: [property time animation<ease | linear | ease-in-out | ...> delay]
+       :transition all 400ms linear)
+     `((:and .submit-button :hover)
+       :background ,pane
+       :padding 20px 30px))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
