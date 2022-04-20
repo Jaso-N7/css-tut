@@ -124,7 +124,14 @@
        :color ,basestar
        :background ,cyan
        ;; transition: [property time animation<ease | linear | ease-in-out | ...> delay]
-       :transition all 400ms linear)
+       :transition all 400ms linear
+       ;; transform: [translate(x, y) | scale(size) | rotate(angle) | skew ]
+       ;; :transform translate 50px 30px
+       ;; :transform scale 2.5
+       ;; :transform rotate -45deg
+       ;; transform: matrix(x-scale, skew-y, skew-x, y-scale, translate-x, translate-y)
+       :transform matrix 1 .45 .45 1 100 50
+       )
      `((:and .submit-button :hover)
        :background ,pane
        :padding 20px 30px))))
