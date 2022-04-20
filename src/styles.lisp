@@ -134,15 +134,8 @@
      `((:and .submit-button :hover)
        :background ,pane
        :padding 20px 30px)
-     '("#about-me"
-       :animation-name red-to-black
-       :animation-duration 4s
-       :animation-timing-function linear ; ease ease-in ease-out ease-in-out
-       :animation-delay -2s
-       ;; animation-direction: [ number | infinite ]
-       :animation-iteration-count 2
-       ;; animation-direction: [*normal | reverse | alternate | alternate-reverse]
-       :animation-direction alternate) 	
+     ;; May need to add browser prefix code for this
+     '("#about-me" :animation red-to-black 4s linear 0s 2 alternate-reverse) 	
      '(:keyframes red-to-black
        (0%
 	:background red
