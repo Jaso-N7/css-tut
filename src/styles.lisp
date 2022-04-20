@@ -134,7 +134,15 @@
      `((:and .submit-button :hover)
        :background ,pane
        :padding 20px 30px)
-     '("#about-me" :animation-name red-to-black)
+     '("#about-me"
+       :animation-name red-to-black
+       :animation-duration 4s
+       :animation-timing-function linear ; ease ease-in ease-out ease-in-out
+       :animation-delay -2s
+       ;; animation-direction: [ number | infinite ]
+       :animation-iteration-count 2
+       ;; animation-direction: [*normal | reverse | alternate | alternate-reverse]
+       :animation-direction alternate) 	
      '(:keyframes red-to-black
        (0%
 	:background red
