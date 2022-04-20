@@ -134,6 +134,7 @@
      `((:and .submit-button :hover)
        :background ,pane
        :padding 20px 30px)
+     '("#about-me" :animation-name red-to-black)
      '(:keyframes red-to-black
        (0%
 	:background red
@@ -143,7 +144,8 @@
 	:transform translate 10px 10px)
        (100%
 	:background black
-	:transform translate 20px 20px)))))
+	:transform translate 20px 20px))
+     )))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
