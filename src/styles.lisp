@@ -130,11 +130,20 @@
        ;; :transform scale 2.5
        ;; :transform rotate -45deg
        ;; transform: matrix(x-scale, skew-y, skew-x, y-scale, translate-x, translate-y)
-       :transform matrix 1 .45 .45 1 100 50
-       )
+       :transform matrix 1 .45 .45 1 100 50)
      `((:and .submit-button :hover)
        :background ,pane
-       :padding 20px 30px))))
+       :padding 20px 30px)
+     '(:keyframes red-to-black
+       (0%
+	:background red
+	:transform translate 0px 0px)
+       (50%
+	:background yellow
+	:transform translate 10px 10px)
+       (100%
+	:background black
+	:transform translate 20px 20px)))))
 
 (defun homestyle ()
   "CSS for introduction page. Using Tron: Legacy pallete from
