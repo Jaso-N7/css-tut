@@ -33,15 +33,26 @@
 		      (:ol (:li ((:a id "tut-link" href "/zero-to-hero") "View the lessons."))
 			   (:li "Section 10: " ((:a id "tut-link" href "/challenge") "Final Exam & Challenge"))))))))))
 
-;; HTML file used for styling
-(publish-file :path "/zero-to-hero"
-	      :file (make-pathname :directory
-				   (append (pathname-directory view-controller::*current-dir*)
-					   '("html"))
-				   :name "lessons"
-				   :type "html"))
+;; HTML -- Path to external HTML files
+(let ((htdocs (append (pathname-directory view-controller::*current-dir*)
+		      '("html"))))
+  (publish-file :path "/zero-to-hero"
+		:file (make-pathname :directory htdocs
+				     :name "lessons"
+				     :type "html"))
+  (publish-file :path "/challenge"
+		:file (make-pathname :directory htdocs				   
+				     :name "index"
+				     :type "html")))
 
-;; Path to the CSS file
+
+;; CSS -- Path to stylesheets
+(publish :path "/main.css" :content-type "text/css; charset=utf-8"
+	 :function
+	 #'(lambda (r e)
+	     (with-http-response (r e :format :text)
+	       (with-http-body (r e)
+		 (princ (funcall #'challenge) *html-stream*)))))
 (publish :path "/style.css" :content-type "text/css; charset=utf-8"
 	 :function
 	 #'(lambda (r e)
@@ -58,17 +69,65 @@
 
 ;;; ASSETS
 ;; Images used in web page
-(publish-file :path "/img-1.png"
-	      :file
-	      (make-pathname :directory
-			     (append (pathname-directory view-controller::*current-dir*)
-				'("img"))
-			     :name "img-1"
-			     :type "png"))
-(publish-file :path "/img-2.png"
-	      :file
-	      (make-pathname :directory
-			     (append (pathname-directory view-controller::*current-dir*)
-				'("img"))
-			     :name "img-2"
-			     :type "png"))
+(let ((assets (append (pathname-directory view-controller::*current-dir*)
+		      '("img"))))
+  (publish-file :path "/img-1.png"
+		:file
+		(make-pathname :directory assets			     
+			       :name "img-1"
+			       :type "png"))
+  (publish-file :path "/img-2.png"
+		:file
+		(make-pathname :directory assets
+			       :name "img-2"
+			       :type "png"))
+  (publish-file :path "/assets/img-1.jpg"
+		:file
+		(make-pathname :directory assets
+			       :name "img-1"
+			       :type "jpg"))
+  (publish-file :path "/assets/img-2.jpg"
+		:file
+		(make-pathname :directory assets
+			       :name "img-2"
+			       :type "jpg"))
+  (publish-file :path "/assets/img-3.jpg"
+		:file
+		(make-pathname :directory assets
+			       :name "img-3"
+			       :type "jpg"))
+  (publish-file :path "/assets/img-4.jpg"
+		:file
+		(make-pathname :directory assets
+			       :name "img-4"
+			       :type "jpg"))
+  (publish-file :path "/assets/img-5.jpg"
+		:file
+		(make-pathname :directory assets
+			       :name "img-5"
+			       :type "jpg"))
+  (publish-file :path "/assets/img-6.jpg"
+		:file
+		(make-pathname :directory assets
+			       :name "img-6"
+			       :type "jpg"))
+  (publish-file :path "/assets/img-7.jpg"
+		:file
+		(make-pathname :directory assets
+			       :name "img-7"
+			       :type "jpg"))
+  (publish-file :path "/assets/img-8.jpg"
+		:file
+		(make-pathname :directory assets
+			       :name "img-8"
+			       :type "jpg"))
+  (publish-file :path "/assets/img-9.jpg"
+		:file
+		(make-pathname :directory assets
+			       :name "img-9"
+			       :type "jpg"))
+  (publish-file :path "/assets/img-10.jpg"
+		:file
+		(make-pathname :directory assets
+			       :name "img-10"
+			       :type "jpg")))
